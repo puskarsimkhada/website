@@ -1,0 +1,38 @@
+.privacy{
+  position: relative;
+}
+.privacy-container{
+  width: 800px;
+  height: 250px;
+  background-color: #2d2d30;
+  position: absolute;
+  left: 300px;
+  bottom: 320px;
+  border-radius: 5px;
+}
+.privacy-title{
+  padding: 20px;
+}
+.privacy-para{
+  padding: 0px 20px;
+  line-height: 25px;
+}
+.privacy-para p span{
+  font-size: 18px;
+  font-weight: 600;
+}
+.privacy-title img{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .privacy-container{
+    width: 340px;
+    height: 420px;
+    left: 30px;
+    bottom: 135px;
+  }
+}
