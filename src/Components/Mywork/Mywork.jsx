@@ -1,73 +1,92 @@
-import React from 'react'
-import './Mywork.css'
-import theme from '../../assets/theme_pattern.svg'
-import APKCinema from '../../assets/Apkcinema.png'
-import gadgetwiz from '../../assets/ecommerce.png'
-import porfolio from '../../assets/puskarporfolio.png'
-import rockpaperscissor from '../../assets/paper.png'
-import arrowIcon from '../../assets/arrow_icon.svg'
-import myportfolio from '../../assets/portfolio.png'
+import React from "react";
+import "./Mywork.css";
+import theme from "../../assets/theme_pattern.svg";
+import APKCinema from "../../assets/Apkcinema.png";
+import gadgetwiz from "../../assets/ecommerce.png";
+import porfolio from "../../assets/puskarporfolio.png";
+import rockpaperscissor from "../../assets/paper.png";
+import arrowIcon from "../../assets/arrow_icon.svg";
+import myportfolio from "../../assets/portfolio.png";
+import youtube from "../../assets/yt1.png";
+import satya from "../../assets/homepage.png";
+import countryAPI from "../../assets/dark.png";
 const Mywork = () => {
   const myworkData = [
     {
       w_no: 1,
-      w_name: "APK Cinema",
-      w_img: APKCinema
+      w_name: "Satya Khabar",
+      w_img: satya,
     },
     {
       w_no: 2,
       w_name: "Gadgetwiz",
-      w_img: gadgetwiz 
+      w_img: gadgetwiz,
     },
     {
       w_no: 3,
       w_name: "myPortfolio",
-      w_img: myportfolio 
+      w_img: myportfolio,
+      websiteLink: "https://puskarsimkhada.com.np/",
     },
     {
       w_no: 4,
       w_name: "Portfolio",
-      w_img: porfolio 
+      w_img: porfolio,
     },
     {
       w_no: 5,
       w_name: "Rock Paper Scissor",
-      w_img: rockpaperscissor 
+      w_img: rockpaperscissor,
+      websiteLink: "https://rock-paper-scissor-by-puskar.netlify.app/",
+    },
+    {
+      w_no: 6,
+      w_name: "Youtube",
+      w_img: youtube,
+    },
+    {
+      w_no: 7,
+      w_name: "CountryAPI",
+      w_img: countryAPI,
+      websiteLink: "https://countryapi-by-puskar.netlify.app/",
     },
   ];
 
-  window.addEventListener('scroll', reveal);
+  window.addEventListener("scroll", reveal);
   function reveal() {
-    let reveals = document.querySelectorAll('.reveal');
-    for(var i=0; i<reveals.length;i++){
+    let reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var revealTop = reveals[i].getBoundingClientRect().top;
       var revealpoint = 150;
-      if(revealTop < windowHeight - revealpoint){
-        reveals[i].classList.add('active');
-      }
-      else{
-        reveals[i].classList.remove('active');
+      if (revealTop < windowHeight - revealpoint) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
       }
     }
   }
   return (
-    <div id='portfolio' className='mywork reveal'>
+    <div id="portfolio" className="mywork reveal">
       <div className="mywork-title">
         <h1>My Latest work</h1>
         <img src={theme} alt="Theme" />
       </div>
       <div className="mywork-container">
-          {myworkData.map((work, index) => {
-            return <img key={index} src={work.w_img}/>
-          })}
+        {myworkData.map((work, index) => {
+          return (
+            <a href={work.websiteLink} target="_blank">
+              <img key={index} src={work.w_img} />
+            </a>
+          );
+        })}
       </div>
-      <div className="mywork-showmore">
+      {/* <div className="mywork-showmore">
         <p>Show More</p>
         <img src={arrowIcon} alt="ArrowIcon" />
-      </div>
+      </div> */}
     </div>
-  )
-}
+  );
+};
 
-export default Mywork
+export default Mywork;

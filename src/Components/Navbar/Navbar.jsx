@@ -54,7 +54,7 @@ const Navbar = () => {
           </AnchorLink>
           {menu === "about" ? <img src={underline} alt="underline" /> : null}
         </li>
-        <li>
+        {/* <li>
           <AnchorLink
             className="anchor-link"
             offset={50}
@@ -64,7 +64,7 @@ const Navbar = () => {
             <p>Services</p>
           </AnchorLink>
           {menu === "service" ? <img src={underline} alt="underline" /> : null}
-        </li>
+        </li> */}
         <li>
           <AnchorLink
             className="anchor-link"
