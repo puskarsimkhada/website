@@ -3,6 +3,8 @@ import "./Mywork.css";
 import theme from "../../assets/theme_pattern.svg";
 import APKCinema from "../../assets/Apkcinema.png";
 import gadgetwiz from "../../assets/ecommerce.png";
+import blog from "../../assets/blog1.png";
+import school from "../../assets/scl1.png";
 import porfolio from "../../assets/puskarporfolio.png";
 import rockpaperscissor from "../../assets/paper.png";
 import arrowIcon from "../../assets/arrow_icon.svg";
@@ -19,37 +21,49 @@ const Mywork = () => {
     },
     {
       w_no: 2,
-      w_name: "Gadgetwiz",
-      w_img: gadgetwiz,
+      w_name: "Blog",
+      w_img: blog,
     },
     {
       w_no: 3,
+      w_name: "school",
+      w_img: school,
+    },
+    {
+      w_no: 5,
       w_name: "myPortfolio",
       w_img: myportfolio,
       websiteLink: "https://puskarsimkhada.com.np/",
     },
     {
+      w_no: 9,
+      w_name: "CountryAPI",
+      w_img: countryAPI,
+      websiteLink: "https://countryapi-by-puskar.netlify.app/",
+    },
+    {
       w_no: 4,
+      w_name: "Gadgetwiz",
+      w_img: gadgetwiz,
+    },
+    
+    {
+      w_no: 6,
       w_name: "Portfolio",
       w_img: porfolio,
     },
     {
-      w_no: 5,
+      w_no: 7,
       w_name: "Rock Paper Scissor",
       w_img: rockpaperscissor,
       websiteLink: "https://rock-paper-scissor-by-puskar.netlify.app/",
     },
     {
-      w_no: 6,
+      w_no: 8,
       w_name: "Youtube",
       w_img: youtube,
     },
-    {
-      w_no: 7,
-      w_name: "CountryAPI",
-      w_img: countryAPI,
-      websiteLink: "https://countryapi-by-puskar.netlify.app/",
-    },
+    
   ];
 
   window.addEventListener("scroll", reveal);

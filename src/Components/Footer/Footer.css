@@ -9,13 +9,30 @@
   justify-content: space-between;
 }
 .footer-left p{
-  font-size: 20px;
+  margin-left: 10px;
+  font-size: 18px;
   max-width: 400px;
 }
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #fff; /* Change color as needed */
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #0077b5; /* LinkedIn Blue */
+}
+
 .footer-right {
   display: flex;
-  align-items: center;
-  gap: 35px;
+  gap: 10px;
+}
+.footer-right p{
+  font-size: 16px;
 }
 .footer-email-input{
   display: flex;
@@ -61,13 +78,17 @@
 .footer-bottom-right p{
   cursor: pointer;
 }
-.footer-bottom-right p:hover{
+.footer-bottom-right a:hover{
   background: linear-gradient(267deg, #00d4ff 0.36%, #0072ff);
   background-clip: border-box;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+
+
 @media (max-width: 768px) {
   .footer{
     margin: 50px 30px;
@@ -89,13 +110,13 @@
     flex-direction: column-reverse;
     margin-bottom: -25px;
   }
-  .footer-right{
+  /* .footer-right{
     display: flex;
     justify-content: start;
     align-items: start;
     flex-direction: column;
     gap: 15px;
-  }
+  } */
   .footer-email-input{
     width: 80%;
     padding: 10px 20px;
@@ -105,6 +126,8 @@
   }
   .footer-bottom-right{
     gap: 10px;
+    display: flex;
+    justify-content: space-between;
   }
   .footer-bottom-right p{
     font-size: 14px;

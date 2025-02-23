@@ -32,7 +32,7 @@ const Navbar = () => {
           onClick={() => closeMenu()}
           className="nav-mob-close"
         />
-        <li>
+        <li className={menu === "home" ? "active" : ""}>
           <AnchorLink
             className="anchor-link"
             offset={50}
@@ -41,18 +41,18 @@ const Navbar = () => {
           >
             <p>Home</p>
           </AnchorLink>
-          {menu === "home" ? <img src={underline} alt="underline" /> : null}
+          {/* {menu === "home" ? <img src={underline} alt="underline" /> : null} */}
         </li>
-        <li>
+        <li className={menu === "about" ? "active" : ""}>
           <AnchorLink
             className="anchor-link"
             offset={50}
             href="#about"
             onClick={() => closeMenu("about")}
           >
-            <p>About Me</p>
+            <p>About</p>
           </AnchorLink>
-          {menu === "about" ? <img src={underline} alt="underline" /> : null}
+          {/* {menu === "about" ? <img src={underline} alt="underline" /> : null} */}
         </li>
         {/* <li>
           <AnchorLink
@@ -65,7 +65,7 @@ const Navbar = () => {
           </AnchorLink>
           {menu === "service" ? <img src={underline} alt="underline" /> : null}
         </li> */}
-        <li>
+        <li className={menu === "portfolio" ? "active" : ""}>
           <AnchorLink
             className="anchor-link"
             offset={50}
@@ -74,11 +74,11 @@ const Navbar = () => {
           >
             <p>Portfolio</p>
           </AnchorLink>
-          {menu === "portfolio" ? (
+          {/* {menu === "portfolio" ? (
             <img src={underline} alt="underline" />
-          ) : null}
+          ) : null} */}
         </li>
-        <li>
+        <li className={menu === "contact" ? "active" : ""}>
           <AnchorLink
             className="anchor-link"
             offset={50}
@@ -87,7 +87,7 @@ const Navbar = () => {
           >
             <p>Contact</p>
           </AnchorLink>
-          {menu === "contact" ? <img src={underline} alt="underline" /> : null}
+          {/* {menu === "contact" ? <img src={underline} alt="underline" /> : null} */}
         </li>
       </ul>
       <div className="nav-connect">

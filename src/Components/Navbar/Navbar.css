@@ -44,6 +44,24 @@
 .nav-mob-open{
   display: none;
 }
+
+/* for navlink underline */
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu li p {
+  display: inline-block;
+  padding-bottom: 5px;
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+.nav-menu li.active p {
+  border-bottom: 3px solid rgb(11, 138, 206);
+}
+
+
+
 @media (max-width: 768px) {
   .navbar{
     margin: 20px 20px;

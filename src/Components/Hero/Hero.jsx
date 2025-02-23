@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="hero-resume">
           <a
             className="anchor-link"
-            href="/Resumee.pdf"
+            href="/puskarResume.pdf"
             target="_blank"
           >
             My Resume

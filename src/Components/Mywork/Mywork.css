@@ -58,7 +58,7 @@
 @media (max-width: 768px) {
   .mywork{
     gap: 50px;
-    margin: 80px 35px;
+    margin: 20px 35px;
     align-items: start;
     margin-bottom: 120px;
   }
