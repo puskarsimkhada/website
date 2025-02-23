@@ -1,20 +1,20 @@
- 🖥️ <h2>Portfolio Website</h2>
+  <h2>🖥️ Portfolio Website</h2>
 This is my personal portfolio website built using React. It showcases my skills, projects, and experiences as a frontend developer.
 
-# 🚀 Features
+ <h2>🚀 Features</h2>
  - Responsive design for all devices 📱💻
  - Smooth navigation and interactive UI 🎨
  - Projects showcase with live links 🔗
  - Contact form for easy communication 📩
 
-# 🛠️ Technologies Used
-Frontend: HTML, CSS, JavaScript, React
-Deployment: GitHub Pages 
+ <h2 >🛠️ Technologies Used</h2>
+ - Frontend: HTML, CSS, JavaScript, React
+ - Deployment: GitHub Pages 
 
-# 📌 Live Demo
+ <h2>📌 Live Demo</h2>
 https://puskarsimkhada.com.np/
 
-#📧 Contact Me
+ <h2>📧 Contact Me</h2>
 If you have any feedback or want to connect, feel free to reach out:
  - 📩 Email: puskarsimkhada22@gmail.com
  - 📱 LinkedIn: https://www.linkedin.com/in/puskarsimkhada10/
