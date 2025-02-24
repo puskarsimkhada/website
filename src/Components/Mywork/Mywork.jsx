@@ -18,54 +18,69 @@ const Mywork = () => {
       w_no: 1,
       w_name: "Satya Khabar",
       w_img: satya,
+      tech: "Laravel, MySQL",
+      description: "News website with Laravel",
     },
     {
       w_no: 2,
-      w_name: "Blog",
+      w_name: "Blog Platform",
       w_img: blog,
+      tech: "React, Laravel, MySQL",
+      description: "Full-stack blog platform",
     },
     {
       w_no: 3,
-      w_name: "school",
+      w_name: "Pragya Academy",
       w_img: school,
+      tech: "React, Laravel, MySQL",
+      description: "School management system",
     },
     {
       w_no: 5,
-      w_name: "myPortfolio",
+      w_name: "Portfolio",
       w_img: myportfolio,
       websiteLink: "https://puskarsimkhada.com.np/",
+      tech: "React",
+      description: "Personal portfolio site",
     },
     {
       w_no: 9,
       w_name: "CountryAPI",
       w_img: countryAPI,
       websiteLink: "https://countryapi-by-puskar.netlify.app/",
+      tech: "React",
+      description: "Country details API app",
     },
     {
       w_no: 4,
       w_name: "Gadgetwiz",
       w_img: gadgetwiz,
+      description: "Simple E-commerce website",
     },
-    
     {
       w_no: 6,
       w_name: "Portfolio",
       w_img: porfolio,
+      tech: "HTML, CSS, JavaScript",
+      description: "Basic portfolio website",
     },
     {
       w_no: 7,
       w_name: "Rock Paper Scissor",
       w_img: rockpaperscissor,
       websiteLink: "https://rock-paper-scissor-by-puskar.netlify.app/",
+      tech: "HTML, CSS, JavaScript",
+      description: "Classic game implementation",
     },
     {
       w_no: 8,
-      w_name: "Youtube",
+      w_name: "Youtube Clone",
       w_img: youtube,
+      tech: "HTML, CSS, JavaScript",
+      description: "YouTube clone with categories",
     },
-    
   ];
-
+  
   window.addEventListener("scroll", reveal);
   function reveal() {
     let reveals = document.querySelectorAll(".reveal");
@@ -89,9 +104,23 @@ const Mywork = () => {
       <div className="mywork-container">
         {myworkData.map((work, index) => {
           return (
-            <a href={work.websiteLink} target="_blank">
-              <img key={index} src={work.w_img} />
-            </a>
+            <><div class="project">
+              <a href={work.websiteLink} target="_blank">
+                <img key={index} src={work.w_img} />
+              </a>
+              <div class="overlay">
+                <h3>{work.w_name}</h3>
+                <p>Tools: {work.tech}</p>
+                <p>{work.description}</p>
+                <a href={work.websiteLink} target="_blank" class="btn">
+                  Live Demo
+                </a>
+                {/* <a href="github-link" class="btn">
+                  View Code
+                </a> */}
+              </div>
+              </div>
+            </>
           );
         })}
       </div>
