@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from "framer-motion";
 import './Contact.css'
 import theme from '../../assets/theme_pattern.svg'
 import mail from '../../assets/mail_icon.svg'
@@ -49,16 +50,30 @@ const Contact = () => {
     return (
     <div id='contact' className='contact reveal'>
       <div className="contact-title">
-        <h1>Get in touch</h1>
-        <img src={theme} alt="" />
+        {/* <h1>Get in touch</h1>
+        <img src={theme} alt="" /> */}
+         <motion.h1
+            className="heading-contact"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          > Get in Touch
+         <motion.span
+              className="head-line-contact"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            />
+            </motion.h1>
       </div>
       <div className="contact-section">
         <div className="contact-left">
           <h1>Lets talk</h1>
+          
           <p>I'm currently available to take on the projects, so feel free to send message about anything that you want to work on.</p>
           <div className="contact-details">
             <div className="contact-detail">
-              <img src={mail} alt="Email" /><p>puskarsimkhada4554@gmail.com</p>
+              <img src={mail} alt="Email" /><p>puskarsimkhada22@gmail.com</p>
             </div>
             <div className="contact-detail">
               <img src={call} alt="Call" /><p>+977 9865429962</p>

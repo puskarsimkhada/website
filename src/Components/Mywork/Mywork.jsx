@@ -1,134 +1,170 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Mywork.css";
+import { motion } from "framer-motion";
 import theme from "../../assets/theme_pattern.svg";
-import APKCinema from "../../assets/Apkcinema.png";
-import gadgetwiz from "../../assets/ecommerce.png";
-import blog from "../../assets/blog1.png";
-import school from "../../assets/scl1.png";
-import porfolio from "../../assets/puskarporfolio.png";
-import rockpaperscissor from "../../assets/paper.png";
 import arrowIcon from "../../assets/arrow_icon.svg";
-import myportfolio from "../../assets/portfolio.png";
-import youtube from "../../assets/yt1.png";
+// Images
 import satya from "../../assets/homepage.png";
+import blog from "../../assets/blog1.png";
+import busLocationTracker from "../../assets/busadmin.png";
+import school from "../../assets/scl1.png";
+import myportfolio from "../../assets/portfolio.png";
 import countryAPI from "../../assets/dark.png";
+import gadgetwiz from "../../assets/ecommerce.png";
+import rockpaperscissor from "../../assets/paper.png";
+import youtube from "../../assets/yt1.png";
+import loopix from "../../assets/loopix.png";
+
 const Mywork = () => {
-  const myworkData = [
+  const [showAll, setShowAll] = useState(false);
+
+  const projects = [
     {
-      w_no: 1,
-      w_name: "Satya Khabar",
-      w_img: satya,
+      name: "Loopix",
+      img: loopix,
+      link: "https://loopix.netlify.app/",
+      tech: "React",
+      desc: "Design and Development company website",
+    },
+    {
+      name: "Bus Location Tracker",
+      img: busLocationTracker,
+      tech: "React",
+      desc: "Student Bus Location Tracker",
+    },
+    {
+      name: "Satya Khabar",
+      img: satya,
       tech: "Laravel, MySQL",
-      description: "News website with Laravel",
+      desc: "News Platform",
     },
     {
-      w_no: 2,
-      w_name: "Blog Platform",
-      w_img: blog,
+      name: "Blog Platform",
+      img: blog,
+      link: "https://www.blog.oxfordcollege.edu.np/",
       tech: "React, Laravel, MySQL",
-      description: "Full-stack blog platform",
+      desc: "Full-stack blog platform",
     },
+    
     {
-      w_no: 3,
-      w_name: "Pragya Academy",
-      w_img: school,
+      name: "Pragya Academy",
+      img: school,
       tech: "React, Laravel, MySQL",
-      description: "School management system",
+      desc: "School management system",
     },
     {
-      w_no: 5,
-      w_name: "Portfolio",
-      w_img: myportfolio,
-      websiteLink: "https://puskarsimkhada.com.np/",
+      name: "Portfolio",
+      img: myportfolio,
+      link: "https://puskarsimkhada.com.np/",
       tech: "React",
-      description: "Personal portfolio site",
+      desc: "Personal Portfolio Website",
     },
     {
-      w_no: 9,
-      w_name: "CountryAPI",
-      w_img: countryAPI,
-      websiteLink: "https://countryapi-by-puskar.netlify.app/",
+      name: "CountryAPI",
+      img: countryAPI,
+      link: "https://countryapi-by-puskar.netlify.app/",
       tech: "React",
-      description: "Country details API app",
+      desc: "Country details API app",
     },
     {
-      w_no: 4,
-      w_name: "Gadgetwiz",
-      w_img: gadgetwiz,
-      description: "Simple E-commerce website",
+      name: "Gadgetwiz",
+      img: gadgetwiz,
+      tech: "Html, CSS, JavaScript",
+      desc: "Simple E-commerce website",
     },
     {
-      w_no: 6,
-      w_name: "Portfolio",
-      w_img: porfolio,
+      name: "Rock Paper Scissor",
+      img: rockpaperscissor,
+      link: "https://rock-paper-scissor-by-puskar.netlify.app/",
       tech: "HTML, CSS, JavaScript",
-      description: "Basic portfolio website",
+      desc: "Classic game implementation",
     },
     {
-      w_no: 7,
-      w_name: "Rock Paper Scissor",
-      w_img: rockpaperscissor,
-      websiteLink: "https://rock-paper-scissor-by-puskar.netlify.app/",
+      name: "Youtube Clone",
+      img: youtube,
       tech: "HTML, CSS, JavaScript",
-      description: "Classic game implementation",
-    },
-    {
-      w_no: 8,
-      w_name: "Youtube Clone",
-      w_img: youtube,
-      tech: "HTML, CSS, JavaScript",
-      description: "YouTube clone with categories",
+      desc: "YouTube clone with categories",
     },
   ];
-  
-  window.addEventListener("scroll", reveal);
-  function reveal() {
-    let reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var revealTop = reveals[i].getBoundingClientRect().top;
-      var revealpoint = 150;
-      if (revealTop < windowHeight - revealpoint) {
-        reveals[i].classList.add("active");
-      } else {
-        reveals[i].classList.remove("active");
-      }
-    }
-  }
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 6);
+
+  useEffect(() => {
+    const reveal = () => {
+      document.querySelectorAll(".mywork").forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 150) {
+          el.classList.add("active");
+        } else {
+          el.classList.remove("active");
+        }
+      });
+    };
+    window.addEventListener("scroll", reveal);
+    return () => window.removeEventListener("scroll", reveal);
+  }, []);
+
   return (
-    <div id="portfolio" className="mywork reveal">
-      <div className="mywork-title">
-        <h1>My Latest work</h1>
-        <img src={theme} alt="Theme" />
+    <section id="portfolio" className="mywork reveal">
+      <div className="mywork-header">
+        {/* <h1>My Latest Work</h1>
+        <img src={theme} alt="Background Theme" className="mywork-theme" /> */}
+         <motion.h1
+            className="heading-work"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          > My Latest Work
+         <motion.span
+              className="head-line-work"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            />
+            </motion.h1>
       </div>
-      <div className="mywork-container">
-        {myworkData.map((work, index) => {
-          return (
-            <><div class="project">
-              <a href={work.websiteLink} target="_blank">
-                <img key={index} src={work.w_img} />
+
+      <div className="projects-grid">
+        {visibleProjects.map(({ name, img, tech, desc, link }, idx) => (
+          <article key={idx} className="project-card">
+            {link ? (
+              <a href={link} target="_blank" rel="noopener noreferrer" className="project-img-link">
+                <img src={img} alt={name} />
               </a>
-              <div class="overlay">
-                <h3>{work.w_name}</h3>
-                <p>Tools: {work.tech}</p>
-                <p>{work.description}</p>
-                <a href={work.websiteLink} target="_blank" class="btn">
+            ) : (
+              <div className="project-img-link">
+                <img src={img} alt={name} />
+              </div>
+            )}
+
+            <div className="project-info">
+              <h3>{name}</h3>
+              <p className="project-tech">{tech}</p>
+              <p className="project-desc">{desc}</p>
+              {link && (
+                <a href={link} target="_blank" rel="noopener noreferrer" className="btn btn-live">
                   Live Demo
                 </a>
-                {/* <a href="github-link" class="btn">
-                  View Code
-                </a> */}
-              </div>
-              </div>
-            </>
-          );
-        })}
+              )}
+            </div>
+          </article>
+        ))}
       </div>
-      {/* <div className="mywork-showmore">
-        <p>Show More</p>
-        <img src={arrowIcon} alt="ArrowIcon" />
-      </div> */}
-    </div>
+
+      <button
+        className="show-more-btn"
+        onClick={() => setShowAll((prev) => !prev)}
+        aria-label={showAll ? "Show less projects" : "Show more projects"}
+      >
+        <span>{showAll ? "Show Less" : "Show More"}</span>
+        <img
+          src={arrowIcon}
+          alt=""
+          className={`arrow-icon ${showAll ? "rotated" : ""}`}
+          aria-hidden="true"
+        />
+      </button>
+    </section>
   );
 };
 

@@ -72,7 +72,7 @@ const Navbar = () => {
             href="#portfolio"
             onClick={() => closeMenu("portfolio")}
           >
-            <p>Portfolio</p>
+            <p>Projects</p>
           </AnchorLink>
           {/* {menu === "portfolio" ? (
             <img src={underline} alt="underline" />

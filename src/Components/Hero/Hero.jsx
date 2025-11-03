@@ -3,7 +3,7 @@ import "./Hero.css";
 import profile from "../../assets/mypicture.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Link } from "react-router-dom";
-
+import puskarResume from '../../assets/PuskarResume.pdf'
 const Hero = () => {
   return (
     <div id="hero" className="hero">
@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="hero-resume">
           <a
             className="anchor-link"
-            href="/puskarResume.pdf"
+            href={puskarResume}
             target="_blank"
           >
             My Resume

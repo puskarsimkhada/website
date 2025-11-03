@@ -5,31 +5,10 @@ import userIcon from '../../assets/user_icon.svg'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import puskarResume from '../../assets/PuskarResume.pdf'
 const Footer = ({togglePrivacy, toggleTerm}) => {
   return (
     <div className='footer'>
-      {/* <div className="footer-top">
-        <div className="footer-left">
-          <img src={footerlogo} alt="Footer" />
-          <p>I'm a frontend developer from Chitwan, Nepal specializing in creating user-friendly websites and bringing designs to life through code.</p>
-        </div>
-        <div className="footer-right">
-          <div className="footer-email-input">
-            <img src={userIcon} alt="" />
-            <input type="email" placeholder='Enter your email' />
-          </div>
-          <div className="subscribe">Subscribe</div>
-          <h2>My Socials</h2>
-          <div className="social-icons">
-            <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faLinkedin} size="2x" />
-            </a>
-            <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faGithub} size="2x" />
-            </a>
-          </div>
-        </div>
-      </div> */}
       <hr />
       <div className="footer-bottom">
         <p className='footer-bottom-left'>Copyright © 2025 Puskar Simkhada - All Rights Reserved</p>
@@ -50,7 +29,7 @@ const Footer = ({togglePrivacy, toggleTerm}) => {
           {/* <p><AnchorLink className="anchor-link" offset={50} href='#contact'>Connect With Me</AnchorLink></p> */}
           <a
             className="anchor-link resume"
-            href="/puskarResume.pdf"
+            href={puskarResume}
             target="_blank"
           >
             My Resume

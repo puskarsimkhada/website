@@ -1,7 +1,9 @@
 import React from 'react'
+import { motion } from "framer-motion";
 import './About.css'
 import theme from '../../assets/theme_pattern.svg'
-import aboutprofile from '../../assets/puskar.png'
+// import aboutprofile from '../../assets/puskar.png'
+import aboutprofile from '../../assets/puskarr.jpg'
 const About = () => {
   window.addEventListener('scroll', reveal);
   function reveal() {
@@ -21,8 +23,21 @@ const About = () => {
   return (
     <div id='about' className='about reveal'>
       <div className="about-title">
-        <h1>About Me</h1>
-        <img src={theme} alt="AboutTheme" />
+        {/* <h1>About Me</h1> */}
+        <motion.h1
+            className="heading-about"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          > About Me
+         <motion.span
+              className="head-line"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            />
+            </motion.h1>
+        {/* <img src={theme} alt="AboutTheme" /> */}
       </div>
       <div className="about-section">
         <div className="about-left">
@@ -31,15 +46,15 @@ const About = () => {
         <div className="about-right">
           <div className="about-para">
             <p>I'm a frontend developer from Chitwan, Nepal specializing in creating user-friendly websites and bringing designs to life through code.</p>
-            <p>I have experience with HTML, CSS, and JavaScript, allowing me to create responsive and visually appealing websites. I enjoy turning ideas into functional designs, solving challenges, and ensuring a smooth user experience across all devices.</p>
+            <p>I have experience with HTML, CSS, and JavaScript, React and API Integration allowing me to create responsive and visually appealing websites. I enjoy turning ideas into functional designs, solving challenges, and ensuring a smooth user experience across all devices.</p>
           </div>
           <div className="about-skills">
           
             <div className="about-skill">
-              <p>HTML & CSS</p> <hr style={{width: "50%"}}/>
+              <p>HTML & CSS</p> <hr style={{width: "70%"}}/>
             </div>
             <div className="about-skill">
-              <p>JavaScript</p> <hr style={{width: "60%"}}/>
+              <p>JavaScript</p> <hr style={{width: "50%"}}/>
             </div>
             <div className="about-skill">
               <p>React JS</p> <hr style={{width: "60%"}}/>
@@ -51,7 +66,7 @@ const About = () => {
               <p>Laravel</p> <hr style={{width: "20%"}}/>
             </div>
             <div className="about-skill">
-              <p>Git & GitHub</p> <hr style={{width: "50%"}}/>
+              <p>Git & GitHub</p> <hr style={{width: "70%"}}/>
             </div>
           </div>
         </div>
@@ -65,6 +80,11 @@ const About = () => {
         <div className="about-achievement">
           <h1>5+</h1>
           <p>PROJECTS COMPLETED</p>
+        </div>
+        <hr />
+        <div className="about-achievement">
+          <h1>1+</h1>
+          <p>HAPPY CLIENTS</p>
         </div>
       </div>
     </div>

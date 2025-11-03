@@ -20,6 +20,20 @@
   right: 0;
   z-index: -1;
 }
+.contact-title .heading-contact{
+  font-size: 60px;
+  font-weight: 700;
+  color: #fafbfc;
+}
+
+.contact-title .head-line-contact{
+  display: block;
+  height: 8px;
+  width: 100px;
+  background: linear-gradient(267deg, #00d4ff  0.36%, #0072ff);
+  margin: 10px auto 10px auto;
+  border-radius: 50px;
+}
 .contact-section{
   display: flex;
   gap: 150px;
